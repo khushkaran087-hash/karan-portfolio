@@ -4,8 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Karan | Personal Portfolio</title>
-<meta name="description" content="Karan's personal portfolio – Sociology student and UPSC CSE 2027 aspirant.">
+<meta name="description" content="Karan's personal portfolio, Sociology student and UPSC CSE 2027 aspirant.">
 
 <style>
 * {
@@ -26,7 +27,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(11,17,32,.95);
+  background: #0b1120;
   padding: 18px 8%;
   display: flex;
   justify-content: space-between;
@@ -43,28 +44,49 @@ header {
 nav a {
   color: #cbd5e1;
   text-decoration: none;
-  margin-left: 20px;
+  margin-left: 18px;
   font-size: 14px;
 }
 
-nav a:hover { color: #60a5fa; }
+nav a:hover {
+  color: #60a5fa;
+}
 
 .hero {
   min-height: 85vh;
-  padding: 100px 10%;
+  padding: 80px 10%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: radial-gradient(circle at 80% 20%, #1e3a5f, #0b1120 55%);
+  align-items: center;
+  background: radial-gradient(circle at 80% 20%, #1e3a5f, #0b1120 65%);
+}
+
+.hero-layout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.hero-content {
+  flex: 1;
 }
 
 .hero h1 {
-  font-size: clamp(45px, 8vw, 75px);
-  line-height: 1.15;
+  font-size: clamp(45px, 7vw, 75px);
+  line-height: 1.2;
   margin: 20px 0;
 }
 
-.hero h1 span { color: #60a5fa; }
+.hero h1 span {
+  color: #60a5fa;
+}
+
+.hero p {
+  max-width: 600px;
+  color: #aab6c8;
+  font-size: 18px;
+}
 
 .tag {
   color: #60a5fa;
@@ -73,10 +95,14 @@ nav a:hover { color: #60a5fa; }
   font-size: 13px;
 }
 
-.hero p {
-  max-width: 650px;
-  color: #aab6c8;
-  font-size: 18px;
+.profile-photo {
+  width: 310px;
+  height: 390px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 18px;
+  border: 3px solid #60a5fa;
+  box-shadow: 0 15px 45px rgba(37,99,235,.3);
 }
 
 .btn {
@@ -87,7 +113,6 @@ nav a:hover { color: #60a5fa; }
   background: #2563eb;
   color: white;
   text-decoration: none;
-  width: fit-content;
 }
 
 section {
@@ -114,9 +139,13 @@ h2 {
   border-color: #60a5fa;
 }
 
-.card h3 { margin-bottom: 10px; }
+.card h3 {
+  margin-bottom: 10px;
+}
 
-.card p { color: #aab6c8; }
+.card p {
+  color: #aab6c8;
+}
 
 .grid {
   display: grid;
@@ -141,12 +170,42 @@ footer {
   color: #94a3b8;
 }
 
-@media(max-width:650px) {
-  header { flex-direction: column; gap: 12px; }
-  nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-  nav a { margin: 0; }
-  section { padding: 55px 7%; }
-  .hero { padding: 80px 7%; }
+@media(max-width:700px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav a {
+    margin: 0;
+  }
+
+  .hero-layout {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 230px;
+    height: 290px;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    padding: 55px 7%;
+  }
 }
 </style>
 </head>
@@ -158,23 +217,40 @@ footer {
   <nav>
     <a href="#about">About</a>
     <a href="#education">Education</a>
-    <a href="#journey">UPSC Journey</a>
+    <a href="#journey">UPSC</a>
     <a href="#interests">Interests</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <div class="hero">
-  <div class="tag">Welcome to my personal portfolio</div>
-  <h1>Hello, I'm <span>Karan.</span></h1>
-  <p>
-    Sociology Student | UPSC CSE 2027 Aspirant
-    <br><br>
-    Exploring society, understanding people,
-    and learning how knowledge can contribute
-    to meaningful change.
-  </p>
-  <a href="#about" class="btn">Explore My Journey ↓</a>
+  <div class="hero-layout">
+
+    <div class="hero-content">
+      <div class="tag">Welcome to my portfolio</div>
+
+      <h1>Hello, I'm <span>Karan.</span></h1>
+
+      <p>
+        Sociology Student | UPSC CSE 2027 Aspirant
+        <br><br>
+        Exploring society, understanding people,
+        and learning how knowledge can contribute
+        to meaningful change.
+      </p>
+
+      <a href="#about" class="btn">
+        Explore My Journey ↓
+      </a>
+    </div>
+
+    <img
+      src="profile.jpg"
+      alt="Karan - Personal Profile"
+      class="profile-photo"
+    />
+
+  </div>
 </div>
 
 <section id="about">
@@ -188,9 +264,8 @@ footer {
       <br><br>
       Alongside my academic journey, I am preparing
       for the UPSC Civil Services Examination 2027.
-      I believe that understanding society is an
-      important step towards understanding governance
-      and public service.
+      I believe understanding society is an important
+      step towards understanding governance and public service.
       <br><br>
       My journey is driven by curiosity, discipline
       and continuous learning.
@@ -226,22 +301,27 @@ footer {
 <section id="interests">
   <h2>Areas of Interest</h2>
   <div class="grid">
+
     <div class="card">
       <h3>Indian Society</h3>
       <p>Social structures, caste, class and social change.</p>
     </div>
+
     <div class="card">
       <h3>Governance</h3>
       <p>Public administration, institutions and policy.</p>
     </div>
+
     <div class="card">
       <h3>Social Justice</h3>
       <p>Equality, inclusion and human development.</p>
     </div>
+
     <div class="card">
       <h3>International Relations</h3>
       <p>Global affairs and India's role in the world.</p>
     </div>
+
   </div>
 </section>
 
@@ -269,7 +349,7 @@ footer {
     <p style="margin-top:15px">
       Email: Add your email address here
     </p>
-      <p>LinkedIn: Add your profile link here</p>
+    <p>LinkedIn: Add your profile link here</p>
   </div>
 </section>
 
